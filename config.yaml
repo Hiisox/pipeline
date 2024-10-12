@@ -1,0 +1,96 @@
+g_config:
+  dataset: "taxi_dataset"
+  name_table_bronze: "g_taxi_trip"
+  name_table_silver: "g_silver"
+  raw_file_path: "gs://bucket_pipeline_mehdi/taxi/green_tripdata_2024-01.parquet"
+  table_ref: "pipeline-gcp-mehdi.taxi_dataset.g_taxi_trip"
+  bronze_schema:
+    -[VendorID, INTEGER, NULLABLE]
+    -[lpep_pickup_datetime, TIMESTAMP, NULLABLE]
+    -[lpep_dropoff_datetime, TIMESTAMP, NULLABLE]
+    -[store_and_fwd_flag, STRING, NULLABLE]
+    -[RatecodeID, INTEGER, NULLABLE]
+    -[PULocationID, INTEGER, NULLABLE]
+    -[DOLocationID, INTEGER, NULLABLE]
+    -[passenger_count, INTEGER, NULLABLE]
+    -[trip_distance, FLOAT, NULLABLE]
+    -[fare_amount, FLOAT, NULLABLE]
+    -[extra, FLOAT, NULLABLE]
+    -[mta_tax, FLOAT, NULLABLE]
+    -[tip_amount, FLOAT, NULLABLE]
+    -[tolls_amount, FLOAT, NULLABLE]
+    -[ehail_fee, FLOAT, NULLABLE]
+    -[improvement_surcharge, FLOAT, NULLABLE]
+    -[total_amount, FLOAT, NULLABLE]
+    -[payment_type, INTEGER, NULLABLE]
+    -[trip_type, INTEGER, NULLABLE]
+    -[congestion_surcharge, FLOAT, NULLABLE]
+  silver_schema:
+    -[vendor_id, INTEGER, NULLABLE]
+    -[lpep_pickup_datetime, TIMESTAMP, NULLABLE]
+    -[lpep_dropoff_datetime, TIMESTAMP, NULLABLE]
+    -[store_and_fwd_flag, STRING, NULLABLE]
+    -[ratecode_id, INTEGER, NULLABLE]
+    -[pu_location_id, INTEGER, NULLABLE]
+    -[do_location_id, INTEGER, NULLABLE]
+    -[passenger_count, INTEGER, NULLABLE]
+    -[trip_distance, FLOAT, NULLABLE]
+    -[fare_amount, FLOAT, NULLABLE]
+    -[extra, FLOAT, NULLABLE]
+    -[mta_tax, FLOAT, NULLABLE]
+    -[tip_amount, FLOAT, NULLABLE]
+    -[tolls_amount, FLOAT, NULLABLE]
+    -[ehail_fee, FLOAT, NULLABLE]
+    -[improvement_surcharge, FLOAT, NULLABLE]
+    -[total_amount, FLOAT, NULLABLE]
+    -[payment_type, INTEGER, NULLABLE]
+    -[trip_type, INTEGER, NULLABLE]
+    -[congestion_surcharge, FLOAT, NULLABLE]
+
+
+y_config:
+  dataset: "taxi_dataset"
+  name_table_bronze: "y_taxi_trip"
+  name_table_silver: "y_silver"
+  raw_file_path: "gs://bucket_pipeline_mehdi/taxi/yellow_tripdata_2024-01.parquet"
+  table_ref: "pipeline-gcp-mehdi.taxi_dataset.y_taxi_trip"
+  bronze_schema:
+    -[VendorID, INTEGER, NULLABLE]
+    -[tpep_pickup_datetime, TIMESTAMP, NULLABLE]
+    -[tpep_dropoff_datetime, TIMESTAMP, NULLABLE]
+    -[passenger_count, INTEGER, NULLABLE]
+    -[trip_distance, FLOAT, NULLABLE]
+    -[RatecodeID, INTEGER, NULLABLE]
+    -[store_and_fwd_flag, STRING, NULLABLE]
+    -[PULocationID, INTEGER, NULLABLE]
+    -[DOLocationID, INTEGER, NULLABLE]
+    -[payment_type, INTEGER, NULLABLE]
+    -[fare_amount, FLOAT, NULLABLE]
+    -[extra, FLOAT, NULLABLE]
+    -[mta_tax, FLOAT, NULLABLE]
+    -[tip_amount, FLOAT, NULLABLE]
+    -[tolls_amount, FLOAT, NULLABLE]
+    -[improvement_surcharge, FLOAT, NULLABLE]
+    -[total_amount, FLOAT, NULLABLE]
+    -[congestion_surcharge, FLOAT, NULLABLE]
+    -[Airport_fee, FLOAT, NULLABLE]
+  silver_schema:
+    -[vendor_id, INTEGER, NULLABLE]
+    -[tpep_pickup_datetime, TIMESTAMP, NULLABLE]
+    -[tpep_dropoff_datetime, TIMESTAMP, NULLABLE]
+    -[passenger_count, INTEGER, NULLABLE]
+    -[trip_distance, FLOAT, NULLABLE]
+    -[ratecode_id, INTEGER, NULLABLE]
+    -[store_and_fwd_flag, STRING, NULLABLE]
+    -[pu_location_id, INTEGER, NULLABLE]
+    -[do_location_id, INTEGER, NULLABLE]
+    -[payment_type, INTEGER, NULLABLE]
+    -[fare_amount, FLOAT, NULLABLE]
+    -[extra, FLOAT, NULLABLE]
+    -[mta_tax, FLOAT, NULLABLE]
+    -[tip_amount, FLOAT, NULLABLE]
+    -[tolls_amount, FLOAT, NULLABLE]
+    -[improvement_surcharge, FLOAT, NULLABLE]
+    -[total_amount, FLOAT, NULLABLE]
+    -[congestion_surcharge, FLOAT, NULLABLE]
+    -[airport_fee, FLOAT, NULLABLE]
